@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories - Heritage Haven</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        /* Custom CSS for the Categories Page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ff9900; /* Amazon-like orange color */
+            color: white;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: right;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li:last-child {
+            margin-right: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        #logo {
+            text-align: left;
+            margin-left: 20px;
+        }
+
+        #logo img {
+            max-width: 100px;
+            height: auto;
+            vertical-align: middle;
+        }
+
+        #logo h1 {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px;
+            font-size: 28px;
+        }
+
+        #categories-list {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .major-category {
+            background-color: #f2f2f2; /* Light gray background */
+            padding: 30px;
+            margin: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            display: inline-block;
+            width: 45%;
+            transition: transform 0.3s;
+            color: #333; /* Dark text color for better readability on light background */
+        }
+
+        .major-category:hover {
+            transform: scale(1.05);
+        }
+
+        .major-category h2 {
+            font-size: 24px;
+        }
+
+        .minor-categories {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .minor-category {
+            background-color: #f2f2f2; /* Light gray background */
+            padding: 20px;
+            flex: 0 1 calc(50% - 10px);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            transition: transform 0.3s;
+            color: #333; /* Dark text color for better readability on light background */
+        }
+
+        .minor-category:hover {
+            transform: scale(1.05);
+        }
+
+        .minor-category h3 {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div id="logo">
+            <img src="Screenshot 2023-10-02 120000.png" alt="Heritage Haven Logo">
+            <h1>Heritage Haven</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Categories Section -->
+    <section id="categories-list">
+        <h2>Explore Our Categories</h2>
+
+        <!-- Major Category 1 -->
+        <div class="major-category">
+            <h2>Games, Puzzle, and More</h2>
+            <p>Description of Major Category 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="minor-categories">
+                <!-- Minor Category 1 -->
+                <div class="minor-category">
+                    <h3>Home Decor</h3>
+                    <p>Come let's give your home a new look together.</p>
+                </div>
+                <!-- Minor Category 2 -->
+                <div class="minor-category">
+                    <h3>Puzzle</h3>
+                    <p>Play in a different way.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Major Category 2 -->
+        <div class="major-category">
+            <h2>Jewels and Bags</h2>
+            <p>Let us glow together.</p>
+            <div class="minor-categories">
+                <!-- Minor Category 3 -->
+                <div class="minor-category">
+                    <h3>Jewels That Make You Glow Even More</h3>
+                    <p>Shine you can't ignore.</p>
+                </div>
+                <!-- Minor Category 4 -->
+                <div class="minor-category">
+                    <h3>Leather Bags</h3>
+                    <p>Show as this is made to be showed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div id="footer-logo">
+            <h1>Heritage Haven</h1>
+        </div>
+        <div id="footer-links">
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

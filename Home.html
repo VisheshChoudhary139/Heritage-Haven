@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heritage Haven</title>
+    <link rel="stylesheet" href="styles.css"> <!-- You should create a separate CSS file for styles -->
+    <style>
+        /* Add some custom styles here */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5; /* Light gray background */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #232f3e; /* Dark blue background */
+            color: white;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: right;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li:last-child {
+            margin-right: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        #logo {
+            text-align: left;
+            margin-left: 20px;
+        }
+
+        #logo img {
+            max-width: 100px;
+            height: auto;
+            vertical-align: middle;
+        }
+
+        #logo h1 {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px;
+            font-size: 28px; /* Increase font size */
+        }
+
+        #hero {
+            text-align: center;
+            padding: 100px 0;
+            background-image: url('hero-background.jpg');
+            background-size: cover;
+            color: #fff; /* White text */
+        }
+
+        #hero h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-family: 'Cursive', cursive; /* Change font family */
+        }
+
+        #hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ff9900; /* Amazon-like orange button */
+            color: white;
+            font-weight: bold;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 20px;
+            transition: background-color 0.3s; /* Add a smooth transition effect */
+        }
+
+        .cta-button:hover {
+            background-color: #ffaa00; /* Slightly brighter on hover */
+        }
+
+        #featured-products {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .product {
+            display: inline-block;
+            margin: 20px;
+            padding: 20px;
+            background-color: #ffffff; /* White product card background */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            width: 30%;
+            margin-right: 2%;
+            vertical-align: top;
+            text-align: center;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product h3 {
+            margin-top: 10px;
+            font-size: 24px;
+            font-family: 'Verdana', sans-serif; /* Change font family */
+        }
+
+        .product p {
+            font-size: 16px;
+            color: #777;
+        }
+
+        .price {
+            display: block;
+            font-size: 20px;
+            margin-top: 10px;
+            color: #ff9900; /* Amazon-like orange price color */
+        }
+
+        .buy-button {
+            display: block;
+            background-color: #ff9900;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .buy-button:hover {
+            background-color: #ffaa00;
+        }
+
+        footer {
+            background-color: #232f3e; /* Dark blue footer background */
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        #footer-logo {
+            text-align: center;
+        }
+
+        #footer-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #footer-links ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #footer-links li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        #footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Responsive styles for smaller screens */
+        @media (max-width: 768px) {
+            .product {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div id="logo">
+            <img src="Screenshot 2023-10-02 120000.png" alt="Heritage Haven Logo">
+            <h1>Heritage Haven</h1>
+        </div>
+        <nav>
+            <ul>
+                
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="contact.html">Contact Us</a></li> <!-- Add link to the Contact page -->
+                <li><a href="about.html">About Us</a></li> <!-- Link to the About Us page -->
+            <li><a href="contact.html">Contact Us</a></li> <!-- Link to the Contact Us page -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h2>Discover the Best Deals Online</h2>
+        <p>Shop our curated selection of products and enjoy great savings.</p>
+        <a href="#" class="cta-button">Shop Now</a>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="featured-products">
+        <h2>Our Best Products</h2>
+        <div class="product">
+            <img src="Screenshot 2023-10-01 223730.png" alt="Product 1" height="200" width="200">
+            <h3>Shambalpuri Toys</h3>
+            <p>Let's play like we used to play.</p>
+            <span class="price">30-500INR</span>
+            <a href="#" class="buy-button" onclick="addToCart('Shambalpuri Toys', 49.99)">Add to Cart</a>
+        </div>
+        <div class="product">
+            <img src="Screenshot 2023-10-01 225624.png" alt="Product 2" height="200" width="200">
+            <h3>Home Decor</h3>
+            <p>Make your home feel alive.</p>
+            <span class="price">30-500INR</span>
+            <a href="#" class="buy-button" onclick="addToCart('Home Decor', 49.99)">Add to Cart</a>
+        </div>
+        <div class="product">
+            <img src="Screenshot 2023-10-01 225852.png" alt="Product 3" height="200" width="200">
+            <h3>Puzzle</h3>
+            <p>Let's Play Puzzle But in a unique manner.</p>
+            <span class="price">500INR</span>
+            <a href="#" class="buy-button" onclick="addToCart('Puzzle', 49.99)">Add to Cart</a>
+        </div>
+        <div class="product">
+            <img src="untitled-3.jpg" alt="Product 4" height="200" width="200">
+            <h3>Leather Bags</h3>
+            <p>Description of Product 4. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <span class="price">$49.99</span>
+            <a href="#" class="buy-button" onclick="addToCart('Leather Bags', 49.99)">Add to Cart</a>
+        </div>
+        <div class="product">
+            <img src="Screenshot 2023-10-01 232002.png" alt="Product 5" height="200" width="200">
+            <h3>Trending Jewels</h3>
+            <p>Tarakasi Filigree earrings/bangles/kada</p>
+            <span class="price">5,500INR</span>
+            <a href="#" class="buy-button" onclick="addToCart('Trending Jewels', 49.99)">Add to Cart</a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div id="footer-logo">
+            <h1>Heritage Haven</h1>
+        </div>
+        <div id="footer-links">
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        // Function to add an item to the cart
+        function addToCart(productName, productPrice) {
+            // Create a new cart item element
+            const cartItem = document.createElement('li');
+            cartItem.className = 'cart-item';
+
+            // Create an image element for the cart item
+            const cartItemImage = document.createElement('img');
+            cartItemImage.src = 'product1.jpg'; // You can set the image source here
+
+            // Create a div to hold the cart item details
+            const cartItemDetails = document.createElement('div');
+
+            // Create a paragraph for the product name
+            const cartItemName = document.createElement('p');
+            cartItemName.textContent = productName;
+
+            // Create a paragraph for the product price
+            const cartItemPrice = document.createElement('p');
+            cartItemPrice.textContent = `$${productPrice.toFixed(2)}`;
+
+            // Append the image, name, and price to the cart item details
+            cartItemDetails.appendChild(cartItemImage);
+            cartItemDetails.appendChild(cartItemName);
+            cartItemDetails.appendChild(cartItemPrice);
+
+            // Create a button to remove the item from the cart
+            const removeButton = document.createElement('button');
+            removeButton.textContent = 'Remove';
+            removeButton.onclick = function () {
+                cartItem.remove(); // Remove the item from the cart
+            };
+
+            // Append the cart item details and remove button to the cart item
+            cartItem.appendChild(cartItemDetails);
+            cartItem.appendChild(removeButton);
+
+            // Append the cart item to the cart
+            document.getElementById('cart-items').appendChild(cartItem);
+        }
+    </script>
+</body>
+</html>
