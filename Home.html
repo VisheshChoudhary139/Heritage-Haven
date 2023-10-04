@@ -5,8 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heritage Haven</title>
     <link rel="stylesheet" href="styles.css"> <!-- You should create a separate CSS file for styles -->
+    <link rel="icon" href="Screenshot 2023-10-02 120000.png"> 
+
     <style>
-        /* Add some custom styles here */
+       #logo img {
+            max-width: 100px;
+            height: auto;
+            vertical-align: middle;
+            border-radius: 20px; /* Add border-radius for curved corners */
+        }
+.product img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px; /* Add border-radius for curved corners */
+}
+
+/* Welcome message overlay */
+.welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it's on top of everything */
+    color: white;
+    font-size: 36px;
+}
+
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f0f2f5; /* Light gray background */
@@ -192,15 +222,34 @@
                 margin-right: 0;
             }
         }
+        .welcome-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Ensure it's on top of everything */
+            color: white;
+            font-size: 36px;
+        }
     </style>
 </head>
 <body>
+   
+
     <!-- Header Section -->
     <header>
         <div id="logo">
             <img src="Screenshot 2023-10-02 120000.png" alt="Heritage Haven Logo">
             <h1>Heritage Haven</h1>
         </div>
+        <!-- Inside your header or any other suitable location -->
+<a href="cart.html" id="view-cart-button">View Cart</a>
+
         <nav>
             <ul>
                 
@@ -212,8 +261,13 @@
                 <li><a href="about.html">About Us</a></li> <!-- Link to the About Us page -->
             <li><a href="contact.html">Contact Us</a></li> <!-- Link to the Contact Us page -->
             </ul>
+           
+              
         </nav>
     </header>
+    <!-- Add this within your HTML -->
+
+
 
     <!-- Hero Section -->
     <section id="hero">
@@ -275,48 +329,112 @@
             </ul>
         </div>
     </footer>
+    <script>
+        window.alert('Welcome to Heritage Haven');
 
-  <script>
+    // Add a click event listener to the document to remove the overlay
+    document.addEventListener('click', removeWelcomeOverlay);
+        // Wrap your JavaScript code in a DOMContentLoaded event listener
+        document.addEventListener('DOMContentLoaded', function () {
+            // Function to add an item to the cart
+            function addToCart(productName, productPrice) {
+                // Create a new cart item element
+                const cartItem = document.createElement('li');
+                cartItem.className = 'cart-item';
+
+                // Create an image element for the cart item
+                const cartItemImage = document.createElement('img');
+                cartItemImage.src = 'product1.jpg'; // You can set the image source here
+
+                // Create a div to hold the cart item details
+                const cartItemDetails = document.createElement('div');
+
+                // Create a paragraph for the product name
+                const cartItemName = document.createElement('p');
+                cartItemName.textContent = productName;
+
+                // Create a paragraph for the product price
+                const cartItemPrice = document.createElement('p');
+                cartItemPrice.textContent = `$${productPrice.toFixed(2)}`;
+
+                // Append the image, name, and price to the cart item details
+                cartItemDetails.appendChild(cartItemImage);
+                cartItemDetails.appendChild(cartItemName);
+                cartItemDetails.appendChild(cartItemPrice);
+
+                // Create a button to remove the item from the cart
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Remove';
+                removeButton.onclick = function () {
+                    cartItem.remove(); // Remove the item from the cart
+                };
+
+                // Append the cart item details and remove button to the cart item
+                cartItem.appendChild(cartItemDetails);
+                cartItem.appendChild(removeButton);
+
+                // Append the cart item to the cart
+                document.getElementById('cart-items').appendChild(cartItem);
+            }
+
+            // Function to remove the welcome message overlay
+            function removeWelcomeOverlay() {
+                const welcomeOverlay = document.getElementById('welcome-overlay');
+                welcomeOverlay.style.display = 'none';
+            }
+
+            // Add a click event listener to the document
+            document.addEventListener('click', function (event) {
+                // Check if the target of the click is not the welcome overlay
+                if (event.target.id !== 'welcome-overlay') {
+                    removeWelcomeOverlay(); // Remove the welcome overlay
+                }
+            });
+
+            // Add a click event listener to the welcome overlay itself to stop event propagation
+            document.getElementById('welcome-overlay').addEventListener('click', function (event) {
+                event.stopPropagation(); // Stop the click event from propagating to the document
+            });
+        });
+        function removeWelcomeOverlay() {
+        const welcomeOverlay = document.getElementById('welcome-overlay');
+        welcomeOverlay.style.display = 'none';
+        document.removeEventListener('click', removeWelcomeOverlay); // Remove the click event listener
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
         // Function to add an item to the cart
         function addToCart(productName, productPrice) {
-            // Create a new cart item element
-            const cartItem = document.createElement('li');
-            cartItem.className = 'cart-item';
+            // Create a new cart item object
+            const cartItem = { name: productName, price: productPrice };
 
-            // Create an image element for the cart item
-            const cartItemImage = document.createElement('img');
-            cartItemImage.src = 'product1.jpg'; // You can set the image source here
+            // Get the current cart data from session storage
+            const cartData = JSON.parse(sessionStorage.getItem('cartData')) || [];
 
-            // Create a div to hold the cart item details
-            const cartItemDetails = document.createElement('div');
+            // Add the new item to the cart data
+            cartData.push(cartItem);
 
-            // Create a paragraph for the product name
-            const cartItemName = document.createElement('p');
-            cartItemName.textContent = productName;
+            // Update the cart data in session storage
+            sessionStorage.setItem('cartData', JSON.stringify(cartData));
 
-            // Create a paragraph for the product price
-            const cartItemPrice = document.createElement('p');
-            cartItemPrice.textContent = `$${productPrice.toFixed(2)}`;
-
-            // Append the image, name, and price to the cart item details
-            cartItemDetails.appendChild(cartItemImage);
-            cartItemDetails.appendChild(cartItemName);
-            cartItemDetails.appendChild(cartItemPrice);
-
-            // Create a button to remove the item from the cart
-            const removeButton = document.createElement('button');
-            removeButton.textContent = 'Remove';
-            removeButton.onclick = function () {
-                cartItem.remove(); // Remove the item from the cart
-            };
-
-            // Append the cart item details and remove button to the cart item
-            cartItem.appendChild(cartItemDetails);
-            cartItem.appendChild(removeButton);
-
-            // Append the cart item to the cart
-            document.getElementById('cart-items').appendChild(cartItem);
+            // Redirect the user to the cart page (optional)
+            window.location.href = 'cart.html';
         }
-    </script> 
+
+        // Attach a click event listener to your "Add to Cart" buttons
+        const addToCartButtons = document.querySelectorAll('.buy-button');
+        addToCartButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const productName = button.parentElement.querySelector('h3').textContent;
+                const productPrice = parseFloat(button.parentElement.querySelector('.price').textContent.replace('$', ''));
+                addToCart(productName, productPrice);
+            });
+        });
+    });
+
+
+    </script>
+
+    
 </body>
 </html>
