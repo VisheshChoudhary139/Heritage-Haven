@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop - Heritage Haven</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
-    <style>
-        /* Custom CSS for the Shop Page */
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Shop - Heritage Haven</title>
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f2f5; /* Light gray background */
@@ -173,6 +175,7 @@
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
+
     </header>
 
     <!-- Product Listing Section -->
@@ -224,7 +227,7 @@
             <a href="#" class="buy-button" onclick="addToCart('Trending Jewels', 49.99)">Add to Cart</a>
         </div>
     </section>
-
+    
     <!-- Footer Section -->
     <footer>
         <div id="footer-logo">
@@ -238,5 +241,44 @@
             </ul>
         </div>
     </footer>
+    <script>
+        // JavaScript functions for cart functionality
+        const cart = [];
+
+        function addToCart(productName, productPrice) {
+            cart.push({ name: productName, price: productPrice });
+            updateCartDisplay();
+            calculateCartTotal();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartDisplay();
+            calculateCartTotal();
+        }
+
+        function updateCartDisplay() {
+            const cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = '';
+
+            cart.forEach((item, index) => {
+                const cartItem = document.createElement('li');
+                cartItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Remove';
+                removeButton.addEventListener('click', () => removeFromCart(index));
+                cartItem.appendChild(removeButton);
+                cartItems.appendChild(cartItem);
+            });
+        }
+
+        function calculateCartTotal() {
+            const total = cart.reduce((acc, item) => acc + item.price, 0);
+            const cartTotal = document.getElementById('cart-total');
+            cartTotal.textContent = `$${total.toFixed(2)}`;
+        }
+    </script>
+    
+
 </body>
 </html>
