@@ -4,35 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heritage Haven</title>
-    <link rel="stylesheet" href="styles.css"> <!-- You should create a separate CSS file for styles -->
+    <link rel="stylesheet" href="styles.css"> 
     <link rel="icon" href="Screenshot 2023-10-02 120000.png"> 
-
+    
+    
     <style>
        #logo img {
             max-width: 100px;
             height: auto;
             vertical-align: middle;
-            border-radius: 20px; /* Add border-radius for curved corners */
+            border-radius: 20px;
         }
+        #hero h2 {
+    font-size: 36px;
+    font-weight: bold; 
+    margin-bottom: 10px; 
+    font-family: 'Cursive', cursive;
+}
 .product img {
     max-width: 100%;
     height: 200px;
     object-fit: cover;
-    border-radius: 10px; /* Add border-radius for curved corners */
+    border-radius: 10px; 
+}
+#hero {
+    text-align: center;
+    padding: 100px 0;
+    background-image: url('Heritage Haven\Screenshot 2023-10-02 120000.png'); 
+    background-size: cover;
+    color: #fff; 
 }
 
-/* Welcome message overlay */
+
 .welcome-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999; /* Ensure it's on top of everything */
+    z-index: 9999;
     color: white;
     font-size: 36px;
 }
@@ -87,7 +101,7 @@
             display: inline-block;
             vertical-align: middle;
             margin-left: 10px;
-            font-size: 28px; /* Increase font size */
+            font-size: 28px;
         }
 
         #hero {
@@ -95,13 +109,13 @@
             padding: 100px 0;
             background-image: url('hero-background.jpg');
             background-size: cover;
-            color: #fff; /* White text */
+            color: #fff; 
         }
 
         #hero h2 {
             font-size: 36px;
             margin-bottom: 20px;
-            font-family: 'Cursive', cursive; /* Change font family */
+            font-family: 'Cursive', cursive; 
         }
 
         #hero p {
@@ -111,18 +125,18 @@
 
         .cta-button {
             display: inline-block;
-            background-color: #ff9900; /* Amazon-like orange button */
+            background-color: #ff9900; 
             color: white;
             font-weight: bold;
             padding: 15px 30px;
             border-radius: 5px;
             text-decoration: none;
             font-size: 20px;
-            transition: background-color 0.3s; /* Add a smooth transition effect */
+            transition: background-color 0.3s; 
         }
 
         .cta-button:hover {
-            background-color: #ffaa00; /* Slightly brighter on hover */
+            background-color: #ffaa00; 
         }
 
         #featured-products {
@@ -134,7 +148,7 @@
             display: inline-block;
             margin: 20px;
             padding: 20px;
-            background-color: #ffffff; /* White product card background */
+            background-color: #ffffff; 
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
             border-radius: 10px;
             width: 30%;
@@ -152,7 +166,7 @@
         .product h3 {
             margin-top: 10px;
             font-size: 24px;
-            font-family: 'Verdana', sans-serif; /* Change font family */
+            font-family: 'Verdana', sans-serif;
         }
 
         .product p {
@@ -164,7 +178,7 @@
             display: block;
             font-size: 20px;
             margin-top: 10px;
-            color: #ff9900; /* Amazon-like orange price color */
+            color: #ff9900; 
         }
 
         .buy-button {
@@ -185,7 +199,7 @@
         }
 
         footer {
-            background-color: #232f3e; /* Dark blue footer background */
+            background-color: #232f3e; 
             color: white;
             text-align: center;
             padding: 20px 0;
@@ -215,7 +229,7 @@
             text-decoration: none;
         }
 
-        /* Responsive styles for smaller screens */
+        
         @media (max-width: 768px) {
             .product {
                 width: 100%;
@@ -228,95 +242,164 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            background-color: rgba(0, 0, 0, 0.7); 
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 9999; /* Ensure it's on top of everything */
+            z-index: 9999; 
             color: white;
             font-size: 36px;
         }
+       
+
+        #special-offers {
+    background-color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.special-offers-container {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.special-offer {
+    width: 250px; 
+    height: 250px; 
+    margin: 0 10px; 
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; 
+    overflow: auto; 
+}
+
+.special-offer img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.special-offer h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.special-offer p {
+    font-size: 16px;
+    color: #777;
+}
+
+
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-33.33%);
+    }
+}
+
     </style>
 </head>
 <body>
-   
 
-    <!-- Header Section -->
     <header>
-        <div id="logo">
-            <img src="Screenshot 2023-10-02 120000.png" alt="Heritage Haven Logo">
-            <h1>Heritage Haven</h1>
-        </div>
-        <!-- Inside your header or any other suitable location -->
-<a href="cart.html" id="view-cart-button">View Cart</a>
-
         <nav>
             <ul>
-                
+               
                 <li><a href="shop.html">Shop</a></li>
                 <li><a href="categories.html">Categories</a></li>
                 <li><a href="cart.html">Cart</a></li>
                 <li><a href="login.html">Login</a></li>
-                <li><a href="contact.html">Contact Us</a></li> <!-- Add link to the Contact page -->
-                <li><a href="about.html">About Us</a></li> <!-- Link to the About Us page -->
-            <li><a href="contact.html">Contact Us</a></li> <!-- Link to the Contact Us page -->
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="about.html">About Us</a></li>
             </ul>
-           
-              
         </nav>
     </header>
-    <!-- Add this within your HTML -->
 
-
-
-    <!-- Hero Section -->
+  
     <section id="hero">
-        <h2>Discover the Best Deals Online</h2>
-        <p>Shop our curated selection of products and enjoy great savings.</p>
+        <h1>Welcome to Heritage Haven</h1>
+        <p>Discover the Best Deals Online</p>
         <a href="#" class="cta-button">Shop Now</a>
     </section>
 
-    <!-- Featured Products Section -->
+    
+    <section id="special-offers">
+        <h2>Festive Offers</h2>
+        <div class="special-offers-container">
+            <div class="special-offer">
+                <img src="untitled-3.jpg" alt="Leather Bag">
+                <h3>Leather Bag</h3>
+                <p>Buy at a special offer of 20%</p>
+                <span class="price">$80.00 <del>$100.00</del></span>
+                <a href="#" class="buy-button" onclick="addToCart('Leather Bag', 80.00)">Add to Cart</a>
+            </div>
+            <div class="special-offer">
+                <img src="Screenshot 2023-10-01 232002.png" alt="Jewels">
+                <h3>Jewels</h3>
+                <p>Offer up to 15%</p>
+                <span class="price">$350.00 <del>$400.00</del></span>
+                <a href="#" class="buy-button" onclick="addToCart('Jewels', 350.00)">Add to Cart</a>
+            </div>
+            <div class="special-offer">
+                <img src="Screenshot 2023-10-01 223730.png" alt="Shambalpuri Toys">
+                <h3>Shambalpuri Toys</h3>
+                <p>Offer up to 20%</p>
+                <span class="price">$40.00 <del>$50.00</del></span>
+                <a href="#" class="buy-button" onclick="addToCart('Shambalpuri Toys', 40.00)">Add to Cart</a>
+            </div>
+        </div>
+    </section>
+
+    
     <section id="featured-products">
         <h2>Our Best Products</h2>
         <div class="product">
-            <img src="Screenshot 2023-10-01 223730.png" alt="Product 1" height="200" width="200">
+            <img src="Screenshot 2023-10-01 223730.png" alt="Shambalpuri Toys">
             <h3>Shambalpuri Toys</h3>
             <p>Let's play like we used to play.</p>
-            <span class="price">30-500INR</span>
-            <a href="#" class="buy-button" onclick="addToCart('Shambalpuri Toys', 49.99)">Add to Cart</a>
+            <span class="price">$30.00</span>
+            <a href="#" class="buy-button" onclick="addToCart('Shambalpuri Toys', 30.00)">Add to Cart</a>
         </div>
         <div class="product">
-            <img src="Screenshot 2023-10-01 225624.png" alt="Product 2" height="200" width="200">
+            <img src="Screenshot 2023-10-01 225852.png" alt="Home Decor">
             <h3>Home Decor</h3>
             <p>Make your home feel alive.</p>
-            <span class="price">30-500INR</span>
-            <a href="#" class="buy-button" onclick="addToCart('Home Decor', 49.99)">Add to Cart</a>
+            <span class="price">$80.00</span>
+            <a href="#" class="buy-button" onclick="addToCart('Home Decor', 80.00)">Add to Cart</a>
         </div>
         <div class="product">
-            <img src="Screenshot 2023-10-01 225852.png" alt="Product 3" height="200" width="200">
+            <img src="Screenshot 2023-10-01 225852.png" alt="Puzzle">
             <h3>Puzzle</h3>
             <p>Let's Play Puzzle But in a unique manner.</p>
-            <span class="price">500INR</span>
-            <a href="#" class="buy-button" onclick="addToCart('Puzzle', 49.99)">Add to Cart</a>
+            <span class="price">$25.00</span>
+            <a href="#" class="buy-button" onclick="addToCart('Puzzle', 25.00)">Add to Cart</a>
         </div>
         <div class="product">
-            <img src="untitled-3.jpg" alt="Product 4" height="200" width="200">
+            <img src="untitled-3.jpg" alt="Leather Bags">
             <h3>Leather Bags</h3>
             <p>Description of Product 4. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <span class="price">$49.99</span>
             <a href="#" class="buy-button" onclick="addToCart('Leather Bags', 49.99)">Add to Cart</a>
         </div>
         <div class="product">
-            <img src="Screenshot 2023-10-01 232002.png" alt="Product 5" height="200" width="200">
+            <img src="Screenshot 2023-10-01 232002.png" alt="Trending Jewels">
             <h3>Trending Jewels</h3>
             <p>Tarakasi Filigree earrings/bangles/kada</p>
-            <span class="price">5,500INR</span>
-            <a href="#" class="buy-button" onclick="addToCart('Trending Jewels', 49.99)">Add to Cart</a>
+            <span class="price">$5,500.00</span>
+            <a href="#" class="buy-button" onclick="addToCart('Trending Jewels', 5500.00)">Add to Cart</a>
         </div>
     </section>
 
-    <!-- Footer Section -->
+    
     <footer>
         <div id="footer-logo">
             <h1>Heritage Haven</h1>
@@ -329,112 +412,12 @@
             </ul>
         </div>
     </footer>
+
     <script>
-        window.alert('Welcome to Heritage Haven');
-
-    // Add a click event listener to the document to remove the overlay
-    document.addEventListener('click', removeWelcomeOverlay);
-        // Wrap your JavaScript code in a DOMContentLoaded event listener
-        document.addEventListener('DOMContentLoaded', function () {
-            // Function to add an item to the cart
-            function addToCart(productName, productPrice) {
-                // Create a new cart item element
-                const cartItem = document.createElement('li');
-                cartItem.className = 'cart-item';
-
-                // Create an image element for the cart item
-                const cartItemImage = document.createElement('img');
-                cartItemImage.src = 'product1.jpg'; // You can set the image source here
-
-                // Create a div to hold the cart item details
-                const cartItemDetails = document.createElement('div');
-
-                // Create a paragraph for the product name
-                const cartItemName = document.createElement('p');
-                cartItemName.textContent = productName;
-
-                // Create a paragraph for the product price
-                const cartItemPrice = document.createElement('p');
-                cartItemPrice.textContent = `$${productPrice.toFixed(2)}`;
-
-                // Append the image, name, and price to the cart item details
-                cartItemDetails.appendChild(cartItemImage);
-                cartItemDetails.appendChild(cartItemName);
-                cartItemDetails.appendChild(cartItemPrice);
-
-                // Create a button to remove the item from the cart
-                const removeButton = document.createElement('button');
-                removeButton.textContent = 'Remove';
-                removeButton.onclick = function () {
-                    cartItem.remove(); // Remove the item from the cart
-                };
-
-                // Append the cart item details and remove button to the cart item
-                cartItem.appendChild(cartItemDetails);
-                cartItem.appendChild(removeButton);
-
-                // Append the cart item to the cart
-                document.getElementById('cart-items').appendChild(cartItem);
-            }
-
-            // Function to remove the welcome message overlay
-            function removeWelcomeOverlay() {
-                const welcomeOverlay = document.getElementById('welcome-overlay');
-                welcomeOverlay.style.display = 'none';
-            }
-
-            // Add a click event listener to the document
-            document.addEventListener('click', function (event) {
-                // Check if the target of the click is not the welcome overlay
-                if (event.target.id !== 'welcome-overlay') {
-                    removeWelcomeOverlay(); // Remove the welcome overlay
-                }
-            });
-
-            // Add a click event listener to the welcome overlay itself to stop event propagation
-            document.getElementById('welcome-overlay').addEventListener('click', function (event) {
-                event.stopPropagation(); // Stop the click event from propagating to the document
-            });
-        });
-        function removeWelcomeOverlay() {
-        const welcomeOverlay = document.getElementById('welcome-overlay');
-        welcomeOverlay.style.display = 'none';
-        document.removeEventListener('click', removeWelcomeOverlay); // Remove the click event listener
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-        // Function to add an item to the cart
+       
         function addToCart(productName, productPrice) {
-            // Create a new cart item object
-            const cartItem = { name: productName, price: productPrice };
-
-            // Get the current cart data from session storage
-            const cartData = JSON.parse(sessionStorage.getItem('cartData')) || [];
-
-            // Add the new item to the cart data
-            cartData.push(cartItem);
-
-            // Update the cart data in session storage
-            sessionStorage.setItem('cartData', JSON.stringify(cartData));
-
-            // Redirect the user to the cart page (optional)
-            window.location.href = 'cart.html';
+            alert(`${productName} added to your cart. Price: $${productPrice.toFixed(2)}`);
         }
-
-        // Attach a click event listener to your "Add to Cart" buttons
-        const addToCartButtons = document.querySelectorAll('.buy-button');
-        addToCartButtons.forEach((button) => {
-            button.addEventListener('click', () => {
-                const productName = button.parentElement.querySelector('h3').textContent;
-                const productPrice = parseFloat(button.parentElement.querySelector('.price').textContent.replace('$', ''));
-                addToCart(productName, productPrice);
-            });
-        });
-    });
-
-
     </script>
-
-    
 </body>
 </html>
