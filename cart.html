@@ -4,90 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart - Heritage Haven</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="cart-styles.css"> 
+</head>
+<style>
 
-        header {
-            background-color: #232f3e; /* Amazon-like dark blue color */
-            color: white;
-            padding: 10px 0;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
 
-        #logo {
-            text-align: left;
-            margin-left: 20px;
-        }
+#cart {
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-        #logo img {
-            max-width: 100px;
-            height: auto;
-            vertical-align: middle;
-            border-radius: 20px; /* Add border-radius for curved corners */
-        }
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
 
-        footer {
-            background-color: #232f3e; /* Amazon-like dark blue color */
-            color: white;
-            padding: 20px 0;
-        }
+#cart-items {
+    list-style: none;
+    padding: 0;
+}
 
-        #cart {
-            background-color: white;
-            margin: 20px;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        }
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
 
-        h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
+.cart-item img {
+    max-width: 100px;
+    height: auto;
+    margin-right: 20px;
+}
 
-        #cart-items {
-            list-style: none;
-            padding: 0;
-        }
+.cart-item p {
+    margin: 0;
+}
 
-        .cart-item {
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            border-bottom: 1px solid #ccc;
-        }
+#cart-total {
+    font-weight: bold;
+}
 
-        .cart-item img {
-            max-width: 100px;
-            height: auto;
-            margin-right: 20px;
-        }
+#lucky-customer-message {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+}
 
-        .cart-item p {
-            margin: 0;
-        }
+#message {
+    font-weight: bold;
+    color: #ff9900; 
+}
 
-        #lucky-customer-message {
-            background-color: #f2f2f2;
-            padding: 10px;
-            border-radius: 5px;
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        #message {
-            font-weight: bold;
-            color: #ff9900; /* Amazon-like orange color */
-        }
     </style>
 </head>
 <body>
-    <!-- Header Section (You can copy the header section from your existing HTML) -->
+    
     <header>
         <div id="logo">
             <img src="Screenshot 2023-10-02 120000.png" alt="Heritage Haven Logo">
@@ -105,22 +89,19 @@
             </ul>
         </nav>
     </header>
-    <div id="cart">
-        <h2>Your Cart</h2>
-        <ul id="cart-items">
-            <!-- Cart items will be added here -->
-        </ul>
-        <p>Total: <span id="cart-total">$0.00</span></p>
-    </div>
-
-    <!-- Cart Section -->
     
-    </section>
-
-    <!-- Add a message for lucky customers -->
-    <section id="lucky-customer-message">
-        <p id="message"></p>
-    </section>
+        <div id="cart">
+            <h2>Your Cart</h2>
+            <ul id="cart-items">
+                <!-- Cart items will be added here -->
+            </ul>
+            <p>Total: <span id="cart-total">$0.00</span></p>
+        </div>
+    
+        <!-- Add a message for lucky customers -->
+        <section id="lucky-customer-message">
+            <p id="Congratulations!! You are our lucky customer..!!"></p>
+        </section>
 
     <!-- Footer Section (You can copy the footer section from your existing HTML) -->
     <footer>
@@ -137,112 +118,37 @@
     </footer>
 
     <script>
-        // Function to display a message for lucky customers
-    function displayLuckyCustomerMessage() {
-        const cartItems = document.querySelectorAll('.cart-item');
-        if (cartItems.length > 3) {
-            const message = document.getElementById('message');
-            message.textContent = "Congratulations! You are a lucky customer.";
-        }
-    }
+        app.post('/add-to-cart', (req, res) => {
+    // Handle adding items to the cart
+});
 
-    // Function to add an item to the cart
-    function addToCart(productName, productPrice) {
-        // Create a new cart item element
-        const cartItem = document.createElement('li');
-        cartItem.className = 'cart-item';
-
-        // Create an image element for the cart item
-        const cartItemImage = document.createElement('img');
-        cartItemImage.src = 'product1.jpg'; // You can set the image source here
-
-        // Create a div to hold the cart item details
-        const cartItemDetails = document.createElement('div');
-
-        // Create a paragraph for the product name
-        const cartItemName = document.createElement('p');
-        cartItemName.textContent = productName;
-
-        // Create a paragraph for the product price
-        const cartItemPrice = document.createElement('p');
-        cartItemPrice.textContent = `$${productPrice.toFixed(2)}`;
-
-        // Create a "Remove" button
-        const removeButton = document.createElement('button');
-        removeButton.textContent = 'Remove';
-        removeButton.addEventListener('click', () => removeFromCart(cartItem)); // Call the remove function
-
-        // Append the image, name, price, and remove button to the cart item details
-        cartItemDetails.appendChild(cartItemImage);
-        cartItemDetails.appendChild(cartItemName);
-        cartItemDetails.appendChild(cartItemPrice);
-        cartItemDetails.appendChild(removeButton);
-
-        // Append the cart item details to the cart item
-        cartItem.appendChild(cartItemDetails);
-
-        // Append the cart item to the cart
-        const cartItemsList = document.getElementById('cart-items');
-        cartItemsList.appendChild(cartItem);
-
-        // Display the lucky customer message
-        displayLuckyCustomerMessage();
-    }
-
-    // Function to remove an item from the cart
-    function removeFromCart(cartItem) {
-        // Remove the cart item from the cart list
-        const cartItemsList = document.getElementById('cart-items');
-        cartItemsList.removeChild(cartItem);
-
-        // Recalculate the cart total
+app.get('/get-cart', (req, res) => {
+    // Handle retrieving the cart's contents
+})
+        // Add items to the cart by sending a POST request to the server
+function addToCart(productName, productPrice) {
+    const item = { productName, productPrice };
+    fetch('/add-to-cart', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(item),
+    })
+    .then(() => {
+        updateCartDisplay();
         calculateCartTotal();
-    }
-
-    // Example usage:
-    document.addEventListener('DOMContentLoaded', function () {
-        // Attach a click event listener to your "Add to Cart" button (you should replace this with the actual button's selector)
-        const addToCartButton = document.getElementById('add-to-cart-button');
-        addToCartButton.addEventListener('click', function () {
-            addToCart('Product Name', 19.99); // Replace with actual product data
-        });
     });
-        
-        
+}
 
-            // Create a div to hold the cart item details
-            const cartItemDetails = document.createElement('div');
-
-            
-
-        // Example usage:
-        document.addEventListener('DOMContentLoaded', function () {
-            // Attach a click event listener to your "Add to Cart" button (you should replace this with the actual button's selector)
-            const addToCartButton = document.getElementById('add-to-cart-button');
-            addToCartButton.addEventListener('click', function () {
-                addToCart('Product Name', 19.99); // Replace with actual product data
-            });
-        });
-        document.addEventListener('DOMContentLoaded', function () {
-    const cart = [];
-
-    function addToCart(productName, productPrice) {
-        cart.push({ name: productName, price: productPrice });
-        updateCartDisplay();
-        calculateCartTotal();
-    }
-
-    function removeFromCart(index) {
-        cart.splice(index, 1);
-        updateCartDisplay();
-        calculateCartTotal();
-    }
-
-    function updateCartDisplay() {
+// Update cart display by fetching data from the server
+function updateCartDisplay() {
+    fetch('/get-cart')
+    .then((response) => response.json())
+    .then((data) => {
         const cartItems = document.getElementById('cart-items');
-        cartItems.innerHTML = ''; // Clear the cart display
-
-        cart.forEach((item, index) => {
+        cartItems.innerHTML = '';
+        data.forEach((item, index) => {
             const cartItem = document.createElement('li');
             cartItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
             const removeButton = document.createElement('button');
@@ -251,54 +157,10 @@
             cartItem.appendChild(removeButton);
             cartItems.appendChild(cartItem);
         });
-    }
-
-    function calculateCartTotal() {
-        const total = cart.reduce((acc, item) => acc + item.price, 0);
-        const cartTotal = document.getElementById('cart-total');
-        cartTotal.textContent = `$${total.toFixed(2)}`;
-    }
-
-    // Add event listeners to your "Add to Cart" buttons
-    const addToCartButtons = document.querySelectorAll('.buy-button');
-    addToCartButtons.forEach((button, index) => {
-        button.addEventListener('click', () => {
-            const productName = button.parentElement.querySelector('h3').textContent;
-            const productPrice = parseFloat(button.parentElement.querySelector('.price').textContent.replace('$', ''));
-            addToCart(productName, productPrice);
-        });
     });
-});
-document.addEventListener('DOMContentLoaded', function () {
-            // Get cart data from session storage or any other storage method you are using
-            const cartData = JSON.parse(sessionStorage.getItem('cartData')) || [];
+}
 
-            // Function to display cart items and calculate total
-            function displayCart() {
-                const cartItemsList = document.getElementById('cart-items');
-                cartItemsList.innerHTML = ''; // Clear the cart display
-
-                // Initialize total price
-                let total = 0;
-
-                // Loop through cart items and display them
-                cartData.forEach((item) => {
-                    const cartItem = document.createElement('li');
-                    cartItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
-                    cartItemsList.appendChild(cartItem);
-
-                    // Add the item's price to the total
-                    total += item.price;
-                });
-
-                // Update the cart total
-                const cartTotal = document.getElementById('cart-total');
-                cartTotal.textContent = `$${total.toFixed(2)}`;
-            }
-
-            // Call the function to initially display the cart
-            displayCart();
-        });
-    </script>
+        </script>
+        
 </body>
 </html>
